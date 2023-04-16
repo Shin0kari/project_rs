@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  rust_api_db:
+    image: "postgres:15"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=shinokari
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=rs_psql
+    volumes:
+      - rs_db_data:/var/lib/postgresql/data
+
+volumes:
+  rs_db_data: {}
